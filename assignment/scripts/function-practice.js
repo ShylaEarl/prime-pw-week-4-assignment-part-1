@@ -87,7 +87,7 @@ function find( value, array ){
   }//end for loop
 }//end find function
 
-//can a ternary operator be used instead of if/else here?
+//can a ternary operator be used instead of if/else here? what about a for of loop rather than a for loop?
 
 console.log('Testing find function');
 console.log('The value is', find(2, [])); //undefined
@@ -97,6 +97,7 @@ console.log('The value is', find(-1, [11, 14, 15])); //false
 console.log('The value is', find(2, ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //true
 console.log('The value is', find('Shyla', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //true
 console.log('The value is', find('John', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //false
+console.log('The value is', find(11, [2, 3, 4, 11])); //true
 
 // ----------------------
 // Stretch Goals
@@ -104,17 +105,33 @@ console.log('The value is', find('John', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); /
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
-}
+ for(i=0; i<string.length; i++){
+   if(letter === string[0]){
+     return true;
+   } else {
+     return false;
+   }//end conditional
+ }//end for loop
+}//end isFirstLetter function
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log( 'isFirstLetter - should say true', isFirstLetter('b', 'banana') );
+console.log( 'isFirstLetter - should say false', isFirstLetter('c', 'lilikoi') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll(array) {
   let sum = 0
   // TODO: loop to add items
+  for(i=0; i<array.length; i++){
+    sum += array[i];
+  }//end for loop
   return sum;
-}
+}//end sumAll function
+console.log('Testing sumAll array...');
+console.log('The sum of this array is:', sumAll([]));
+console.log('The sum of this array is:', sumAll([3, 5, 7, 9, 11]));
+console.log('The sum of this array is:', sumAll([-2, 2,-4, 1, 0]));
+console.log('The sum of this array is:', sumAll([.345, 839347, 2.45]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
