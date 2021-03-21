@@ -173,3 +173,20 @@ function boolToString(flag){
 console.log(boolToString(true)); //returns the string true
 console.log(boolToString(false)); //returns the string false
 console.log(boolToString('Shyla'));
+
+//function for weekly slack question
+let sunny = true;
+let rainy = false;
+
+function walkOnAWarmSunnyDay(weather, temp){
+  if(weather === true && temp >= 60){
+    return 'yes!';
+  } else {
+    return 'no...';
+  }//end conditional
+}//end function
+
+console.log('Should I go for a walk?', walkOnAWarmSunnyDay(sunny, 50)); //expect false
+console.log('Should I go for a walk?', walkOnAWarmSunnyDay(rainy, 80)); //expect false
+console.log('Should I go for a walk?', walkOnAWarmSunnyDay(sunny, 67)); //expect true
+console.log('Should I go for a walk?', walkOnAWarmSunnyDay(rainy, 43)); //expect false
