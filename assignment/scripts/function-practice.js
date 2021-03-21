@@ -82,7 +82,12 @@ function find(value, array){
   }//end for loop
 }//end find function
 
-//can a ternary operator be used instead of if/else here? what about a for of loop rather than a for loop?
+// //find function written with a for of loop and ternary operator
+// function find(value, array){
+//   for(let item of array){
+//     return value ? value >= 0 || value === item : false;
+//   }//end for of loop
+// }//end find function
 
 console.log('Testing find function');
 console.log('The value is', find(2, [])); //undefined
