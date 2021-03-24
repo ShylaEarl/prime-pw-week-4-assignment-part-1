@@ -72,14 +72,23 @@ console.log('The last element in the array is', getLast([2, .874, 13]));
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
+// function find(value, array){
+//   for(let i=0; i<array.length; i++){
+//     if(value >= 0 || value === array[i]){
+//       return true;
+//     } else {
+//       return false;
+//     }//end conditional
+//   }//end for loop
+// }//end find function
+
 function find(value, array){
   for(let i=0; i<array.length; i++){
-    if(value >= 0 || value === array[i]){
+    if(value === i || value === array[i]){
       return true;
-    } else {
-      return false;
     }//end conditional
   }//end for loop
+  return false;
 }//end find function
 
 // //find function written with a for of loop and ternary operator
@@ -90,7 +99,7 @@ function find(value, array){
 // }//end find function
 
 console.log('Testing find function');
-console.log('The value is', find(2, [])); //undefined
+console.log('The value is', find(2, [])); //false
 console.log('The value is', find(1, [5, 7, 9, 11, 13])); //true
 console.log('The value is', find(0, [23, 13, 15, 19, 5])); //true
 console.log('The value is', find(-1, [11, 14, 15])); //false
@@ -98,6 +107,10 @@ console.log('The value is', find(2, ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //true
 console.log('The value is', find('Shyla', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //true
 console.log('The value is', find('John', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //false
 console.log('The value is', find(11, [2, 3, 4, 11])); //true
+
+console.log('The value is', find(7,[1, 2, 3])); //false
+console.log('The value is', find(7,[-1, 2, 3])); //false
+console.log('The value is', find('Sam', ['Shyla', 'Sam', 'JoJo', 'Joleen'])); //true
 
 // ----------------------
 // Stretch Goals
